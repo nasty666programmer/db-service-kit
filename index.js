@@ -10,6 +10,9 @@ class DbServiceKit extends EventEmitter{
 		}
 	}
 
+	/** Initial connect
+	 * @returns {SequelizeInstance|null}
+	 */
 	_connect() {
 		if (this.instance) return;
 
@@ -36,6 +39,11 @@ class DbServiceKit extends EventEmitter{
 		}
 	}
 
+	/**
+	 * @param modelName
+	 * @param params
+	 * @returns {Promise<SequelizeInstance>}
+	 */
 	async getCount(modelName, params) {
 		this._checkDefinedTable(modelName);
 
@@ -44,7 +52,11 @@ class DbServiceKit extends EventEmitter{
 		return result;
 
 	}
-
+	/**
+	 * @param modelName
+	 * @param params
+	 * @returns {Promise<SequelizeInstance>}
+	 */
 	async getList(modelName, params) {
 		this._checkDefinedTable(modelName);
 
@@ -53,7 +65,11 @@ class DbServiceKit extends EventEmitter{
 		return result;
 
 	}
-
+	/**
+	 * @param modelName
+	 * @param params
+	 * @returns {Promise<SequelizeInstance>}
+	 */
 	async getOne(modelName, params) {
 		this._checkDefinedTable(modelName);
 
